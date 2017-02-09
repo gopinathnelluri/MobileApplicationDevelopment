@@ -14,7 +14,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         name.becomeFirstResponder()
+        
+        //for delegations
         self.name.delegate = self
+        
+        message.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +53,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
         else if timeOfDay.selectedSegmentIndex == 2 {
             message.text = "Good evening, \(userName)"
         }
+        message.isHidden = false
     }
     
     
