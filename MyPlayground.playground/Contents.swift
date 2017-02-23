@@ -3,11 +3,10 @@
 import UIKit
 
 var str = "Hello, playground"
-var a:String
-var b:String
-var c:String
-//a = b = c = "Hello"
 
-var k = 10
+var a:Int = 10
+
+var d = 11.0 + Double(a)
+
 
 
