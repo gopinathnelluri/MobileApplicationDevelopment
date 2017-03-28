@@ -66,6 +66,20 @@ class ViewController: UITableViewController {
         }
     }
     
+    
+    @IBAction func save(segue: UIStoryboardSegue) {
+        if segue.identifier == "SaveUnwindSegue" {
+            let dest = segue.source as! AddContactViewController
+            contacts.addContact(dest.contact)
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func cancle(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

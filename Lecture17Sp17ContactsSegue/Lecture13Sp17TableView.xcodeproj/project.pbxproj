@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752950401E8ACCC900C4E37A /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529503F1E8ACCC900C4E37A /* AddContactViewController.swift */; };
 		75591B6B1E84360E0064B621 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75591B6A1E84360E0064B621 /* ContactDetailViewController.swift */; };
 		75EA34831E65ED79002609D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA34821E65ED79002609D5 /* AppDelegate.swift */; };
 		75EA34851E65ED79002609D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA34841E65ED79002609D5 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7529503F1E8ACCC900C4E37A /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = SOURCE_ROOT; };
 		75591B6A1E84360E0064B621 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		75EA347F1E65ED79002609D5 /* Lecture13Sp17TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lecture13Sp17TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EA34821E65ED79002609D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				75EA34951E65F053002609D5 /* Supported Files */,
 				75EA34841E65ED79002609D5 /* ViewController.swift */,
+				7529503F1E8ACCC900C4E37A /* AddContactViewController.swift */,
 				75EA34861E65ED79002609D5 /* Main.storyboard */,
 				75EA34961E65F081002609D5 /* Contact.swift */,
 				75EA34981E65F30F002609D5 /* ContactDBModel.swift */,
@@ -156,6 +159,7 @@
 				75EA34971E65F081002609D5 /* Contact.swift in Sources */,
 				75591B6B1E84360E0064B621 /* ContactDetailViewController.swift in Sources */,
 				75EA34851E65ED79002609D5 /* ViewController.swift in Sources */,
+				752950401E8ACCC900C4E37A /* AddContactViewController.swift in Sources */,
 				75EA34991E65F30F002609D5 /* ContactDBModel.swift in Sources */,
 				75EA34831E65ED79002609D5 /* AppDelegate.swift in Sources */,
 			);
