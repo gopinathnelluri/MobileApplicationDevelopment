@@ -170,6 +170,159 @@ p.name
 
 
 
+//static protocol
+
+protocol StProt {
+    static var typeProp: Int {get set}
+}
+
+class WithStatic: StProt{
+    static var typeProp: Int = 50
+}
+
+WithStatic.typeProp
+
+
+protocol ProtoWithMethods {
+    var z:Int {get set}
+    func func1()
+    func func2(x:String) -> Int
+    init (x:Int)
+}
+
+class Init {
+    var a:Int
+    init (x:Int){a=x}
+}
+
+class Initilaized:Init, ProtoWithMethods {
+    var y:Int
+    var z: Int
+    func func1(){
+        print("hello")
+    }
+    func func2(x:String) -> Int{
+        return x.characters.count
+    }
+    required override init (x:Int){
+        y = x
+        z = 0
+        super.init(x: x)
+    }
+}
+
+var a = Initilaized(x: 2)
+
+a.func1()
+a.func2(x: "hello everyone")
+
+
+
+protocol Browsable{
+    func browse(s:String)
+}
+
+protocol Editable{
+    mutating func edit(x:Int)
+}
+
+struct xs: Editable {
+    var b: Int = 0
+    mutating func edit(x:Int){
+        b+=1
+        print(xs.self)
+    }
+}
+
+class Website: Browsable, Editable{
+    func browse(s: String){
+        print("Hello from website's browse")
+    }
+    func edit(x: Int){
+    print("The value of x is \(x)")
+    }
+}
+
+class Document: Editable{
+    func edit(x: Int){
+        print("The value of x from Document is \(x)")
+    }
+}
+
+class Settings: Editable{
+    func edit(x: Int){
+        print("The value of x from Settings is \(x)")
+    }
+}
+
+
+
+
+
+var google: Website = Website()
+
+var blueTooth: Settings = Settings()
+
+var word: Document = Document()
+
+
+var p1: Editable = blueTooth
+
+var p2: Editable = word
+
+var p3: Editable & Browsable = google
+
+
+
+func f2(x: Browsable & Editable){
+    x.browse(s: "hi")
+    print("func done")
+}
+
+f2(x:google)
+
+
+protocol onlyClass: class{
+    func onlyClassCanUseIt(s:String)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class TempClass{
+    var st: String!
+    var n: Int!
+    
+    init(s:String,i:Int){
+        st = s
+        n = i
+    }
+    
+}
+
+
+var tc = [TempClass]()
+
+tc.append(TempClass(s:"Hello",i:10))
+tc.append(TempClass(s:"Hello",i:12))
+tc.append(TempClass(s:"Hello",i:45))
+tc.append(TempClass(s:"Hello",i:11))
+tc.append(TempClass(s:"Hello",i:89))
+tc.append(TempClass(s:"Hello",i:2))
+
+tc.sorted(by: {$0.n < $1.n})
+
+
+
+
 
 
 
