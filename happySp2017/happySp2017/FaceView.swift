@@ -8,10 +8,24 @@
 
 import UIKit
 
+protocol FaceViewDataSource : class {
+    func smilinessForFaceView(_ sender: FaceView) -> Double?
+}
+
 @IBDesignable
 
 class FaceView: UIView {
 
+    weak var dataSource : FaceViewDataSource?
+    
+    
+    func scale (_ gesture: UIPinchGestureRecognizer){
+        if gesture.state == .changed {
+            scale *= gesture.scale
+            gesture.scale = 1
+        }
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -23,7 +37,11 @@ class FaceView: UIView {
     }
     
     @IBInspectable
-    var scale:CGFloat = 0.9
+    var scale:CGFloat = 0.9 {
+        didSet{
+            setNeedsDisplay()
+        }
+    }
     
     @IBInspectable
     var faceRadius : CGFloat {
@@ -34,7 +52,12 @@ class FaceView: UIView {
     var lineWidth : CGFloat = 3
     
     @IBInspectable
-    var color = UIColor.green
+    var color = UIColor.green {
+        didSet{
+            setNeedsDisplay()
+        }
+    }
+
     
     
     fileprivate struct Scaling {
@@ -97,11 +120,12 @@ class FaceView: UIView {
         facePath.stroke()
         bezierPathForEye(.left).stroke()
         bezierPathForEye(.right).stroke()
-        let smileness =
-        1.0
+        let smileness = dataSource?.smilinessForFaceView(self) ?? 0.0
         bezierPathForSmile(smileness).stroke()
     
         
     }
+    
+    
     
 }

@@ -12,36 +12,18 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="happySp2017" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="FaceView" customModule="happySp2017" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="8Ku-FT-Nc2" appends="YES" id="oIH-Xk-nxp"/>
-                            <outletCollection property="gestureRecognizers" destination="ri0-5C-Idy" appends="YES" id="PnK-se-sAa"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="faceView" destination="8bC-Xf-vdC" id="Pjm-QQ-V3o"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="8Ku-FT-Nc2">
-                    <connections>
-                        <action selector="cangeColor:" destination="BYZ-38-t0r" id="Lgx-Bk-Hdb"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="ri0-5C-Idy">
-                    <connections>
-                        <action selector="changeHappiness:" destination="BYZ-38-t0r" id="5TE-Nr-apN"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
